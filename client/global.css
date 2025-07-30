@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme - Finance App Dark Theme
+   * Inspired by crazycreative.design with purple gradients
+   */
+  :root {
+    --background: 282 45% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 282 25% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 282 25% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 282 45% 22%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 282 25% 15%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 282 20% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 275 80% 65%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 282 20% 25%;
+    --input: 282 20% 25%;
+    --ring: 275 80% 65%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 282 45% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 275 80% 65%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 282 25% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 282 20% 25%;
+    --sidebar-ring: 275 80% 65%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 282 45% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 282 45% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 282 45% 8%;
+
+    --primary: 275 80% 65%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 275 20% 95%;
+    --secondary-foreground: 282 45% 8%;
+
+    --muted: 275 15% 92%;
+    --muted-foreground: 282 20% 35%;
+
+    --accent: 275 80% 65%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 275 15% 85%;
+    --input: 275 15% 85%;
+    --ring: 275 80% 65%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 282 20% 35%;
+    --sidebar-primary: 275 80% 65%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 275 15% 92%;
+    --sidebar-accent-foreground: 282 45% 8%;
+    --sidebar-border: 275 15% 85%;
+    --sidebar-ring: 275 80% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-xl;
+  }
+
+  .glow-effect {
+    box-shadow:
+      0 0 20px rgba(206, 73, 191, 0.3),
+      0 0 40px rgba(147, 117, 255, 0.2);
+  }
+
+  .finance-gradient {
+    background: linear-gradient(135deg, #46244c 0%, #9375ff 50%, #ce49bf 100%);
+  }
+
+  .hero-gradient {
+    background:
+      radial-gradient(
+        circle at 20% 80%,
+        rgba(70, 36, 76, 0.8) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(206, 73, 191, 0.8) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 40% 40%,
+        rgba(147, 117, 255, 0.6) 0%,
+        transparent 50%
+      );
+  }
+
+  /* Mobile-specific optimizations */
+  @media (max-width: 768px) {
+    .hero-gradient {
+      background:
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(70, 36, 76, 0.6) 0%,
+          transparent 70%
+        ),
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(206, 73, 191, 0.4) 0%,
+          transparent 60%
+        );
+    }
+
+    .glass-card {
+      backdrop-blur: 8px;
+    }
+  }
+
+  /* Smooth scroll behavior */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
